@@ -1,0 +1,10 @@
+.space{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin : 10px 0;
+    padding : 20px;
+    text-align: start;
+}
+.case{
+    display: inline-block;
+}
