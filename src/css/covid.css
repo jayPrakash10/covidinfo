@@ -6,9 +6,8 @@
     text-align: start;
     overflow: auto;
 }
-.case{
-    display: inline-block;
-    width : 200px;
+h4,h2{
+    margin : 20px 0;
 }
 #searchByCountry,.error{
     text-align: start;
@@ -22,17 +21,4 @@
 }
 .hide-scroll::-webkit-scrollbar{
     display: none;
-}
-
-@media only screen and (max-width : 752px){
-    .container{
-        width : 100%;
-    }
-    .space{
-        overflow: auto;
-    }
-    .case{
-        width: 150px;
-    }
-        
 }
