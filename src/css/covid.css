@@ -8,3 +8,10 @@
 .case{
     display: inline-block;
 }
+
+#searchByCountry,.error{
+    text-align: start;
+    padding: 0 20px;
+    margin-bottom: 50px;
+    display: none;
+}
