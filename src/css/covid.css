@@ -4,14 +4,35 @@
     margin : 10px 0;
     padding : 20px;
     text-align: start;
+    overflow: auto;
 }
 .case{
     display: inline-block;
+    width : 200px;
 }
-
 #searchByCountry,.error{
     text-align: start;
     padding: 0 20px;
     margin-bottom: 50px;
     display: none;
+}
+.hide-scroll{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.hide-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+@media only screen and (max-width : 752px){
+    .container{
+        width : 100%;
+    }
+    .space{
+        overflow: auto;
+    }
+    .case{
+        width: 150px;
+    }
+        
 }
