@@ -2,13 +2,14 @@ import { useState } from "react";
 
 function Search({data}){
     var search = document.getElementById('searchByCountry')
-    const [cases, setcases] = useState({totalCases:0, recover:0, newCases:0, activeCases:0, criticalCases:0, deaths:0})
+    const [cases, setcases] = useState({country:'',totalCases:0, recover:0, newCases:0, activeCases:0, criticalCases:0, deaths:0})
     var err = true
     function show(){
         let country = document.getElementById('country').value
         data.forEach(element => {
             if(country.toLowerCase()==element.country.toLowerCase()){
-                setcases({totalCases : element.cases.total,
+                setcases({country:country,
+                totalCases : element.cases.total,
                 recover : element.cases.recovered,
                 newCases : element.cases.new,
                 activeCases : element.cases.active,
@@ -33,7 +34,8 @@ function Search({data}){
             <div id='error' className='error text-danger'>
                 Invalid Country or continent name
             </div>
-            <div id='searchByCountry'>
+            <div id='searchByCountry' className="space hide-scroll">
+                <h3 style={{marginTop:'20px'}}>{cases.country}</h3>
                 <table className='table'>
                     <thead>
                         <tr>

@@ -67,7 +67,7 @@ function CovidDetails({data}){
             
             <Search data={data}/>
 
-            <div className='space'>
+            <div className='space hide-scroll'>
                 <table className='table table-striped'>
                     <thead>
                         <tr>
