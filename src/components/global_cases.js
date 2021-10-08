@@ -1,12 +1,28 @@
 function Global({cases, recovered, deaths}){
     return(
-            <div className='space'>
-                <div className='card-group'>
-                    <div className='card text-center list-group-item-secondary'><h4>Total Cases</h4> <h2>{cases}</h2></div>
-                    <div className=' card text-center list-group-item-success'><h4>Recovered</h4> <h2>{recovered}</h2></div>
-                    <div className='card text-center list-group-item-danger'><h4>Deaths</h4> <h2>{deaths}</h2></div>
+        <div className='card infocontainer'>
+        <div className='card-group'>
+            <div className='card list-group-item-secondary'>
+                <div className='card-body'>
+                    <div className='card-title'>Total</div>
+                    <div className='card-title'>{cases}</div>
                 </div>
             </div>
+            <div className='card list-group-item-success'>
+                <div className='card-body'>
+                    <div className='card-title'>Recover</div>
+                    <div className='card-title'>{recovered}</div>
+                </div>
+            </div>
+            <div className='card list-group-item-danger'>
+                <div className='card-body'>
+                    <div className='card-title'>Deaths</div>
+                    <div className='card-title'>{deaths}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     )
 }
 

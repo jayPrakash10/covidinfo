@@ -1,3 +1,34 @@
+.infocontainer,.searchcontainer{
+    padding: 10px;
+}
+.infocontainer > .card-body{
+    padding: 50px 0;
+}
+.infocontainer{
+    padding-top: 50px;
+    height: 310px;
+}
+.card-body{
+    padding: 5px 16px;
+}
+.card-title{
+    padding: 10px 0;
+    font-weight: 700;
+}
+.card{
+    border: none;
+}
+.countryinfo, .error1{
+    display: none;
+    width: 100%;
+}
+.countryinfo > .card-group:not(:last-child){
+    border-bottom: 1px solid black;
+}
+.countryinfo > .card-group > .card:not(:first-child){
+    border-left: 1px solid black;
+}
+
 .space{
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -6,15 +37,7 @@
     text-align: start;
     overflow: auto;
 }
-h4,h2{
-    margin : 20px 0;
-}
-#searchByCountry,.error{
-    text-align: start;
-    padding: 0 20px;
-    margin-bottom: 50px;
-    display: none;
-}
+
 .hide-scroll{
     -ms-overflow-style: none;
     scrollbar-width: none;

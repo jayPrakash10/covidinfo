@@ -1,6 +1,7 @@
 import React from "react"
 import Global from "./global_cases";
 import Search from "./search_country";
+
 function sort_new(arr){
     let j=0;
     let i=0
@@ -62,11 +63,12 @@ function CovidDetails({data}){
     show()
     
     return(
+        <>
         <div className='container'>
-            <Global cases={total_cases} recovered={total_recovered} deaths={total_deaths}/>
-            
-            <Search data={data}/>
-
+            <div className='card-group topcontainer'>
+                <Global cases={total_cases} recovered={total_recovered} deaths={total_deaths}/>
+                <Search data={data}/>
+            </div>
             <div className='space hide-scroll'>
                 <table className='table table-striped'>
                     <thead>
@@ -86,6 +88,7 @@ function CovidDetails({data}){
                 </table>
             </div>
         </div>
+        </>
     )
 }
 

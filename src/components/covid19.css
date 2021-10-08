@@ -1,0 +1,29 @@
+.infocontainer,.searchcontainer{
+    padding: 10px;
+}
+.infocontainer > .card-body{
+    padding: 50px 0;
+}
+.infocontainer{
+    padding-top: 20px;
+    height: 310px;
+}
+.card-body{
+    padding: 5px 16px;
+}
+.card-title{
+    padding: 10px 0;
+    font-weight: 700;
+}
+.card{
+    border: none;
+}
+.countryinfo, .error1{
+    width: 100%;
+}
+.error1{
+    display: none;
+}
+.countryinfo{
+    display: none;
+}

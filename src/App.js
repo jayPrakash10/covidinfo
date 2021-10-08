@@ -5,7 +5,7 @@ import './css/covid.css'
 
 function App() {
   
-  const [info, setInfo] = useState(null)
+  const [info, setInfo] = useState([])
   useEffect(()=>{
     getapi()
   },[])
@@ -30,6 +30,7 @@ function App() {
   }
   return (
     <div className="App">
+      <h1 style={{margin:'20px 0'}}>Covid-19 Tracker</h1>
       <CovidDetails data={info} />
     </div>
   );
