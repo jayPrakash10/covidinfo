@@ -45,3 +45,26 @@
 .hide-scroll::-webkit-scrollbar{
     display: none;
 }
+
+@media screen and (max-width:478px) {
+    .infocontainer{
+        padding-top: 0;
+        height: 370px;
+    }
+    .countryinfo > .card-group{
+        display: flex;
+    }
+    .countryinfo > .card-group > .card{
+        width: 33%;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+    .countryinfo > .card-group > .card > .card-body{
+        margin-bottom: 10px;
+    }
+    table > thead > tr > th:first-child, table > tbody > tr > td:first-child{
+        position: sticky;
+        left: -20px;
+        background-color: white;
+    }
+}
