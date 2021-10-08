@@ -4,7 +4,15 @@ function Search({data}){
     var search = document.getElementById('searchByCountry')
     const [cases, setcases] = useState({country:'',totalCases:0, recover:0, newCases:0, activeCases:0, criticalCases:0, deaths:0})
     var err = true
-
+    
+    function mb(num){
+        if(num<1000)
+            return num
+        else if(num/1000 < 1000)
+            return parseInt(num/1000)+'K+'
+        return parseInt(num/1000000)+' M+'
+    }
+    
     function show(){
         let country = document.getElementById('country').value
         data.forEach(element => {
@@ -42,13 +50,13 @@ function Search({data}){
                     <div className="card">
                         <div className="card-body">
                             <div className="card-title">Total</div>
-                            <p className="card-text">{cases.totalCases}</p>
+                            <p className="card-text">{mb(cases.totalCases)}</p>
                         </div>
                     </div>
                     <div className="card">
                         <div className="card-body">
                             <div className="card-title">Recover</div>
-                            <p className="card-text">{cases.recover}</p>
+                            <p className="card-text">{mb(cases.recover)}</p>
                         </div>
                     </div>
                     <div className="card">
@@ -62,19 +70,19 @@ function Search({data}){
                     <div className="card">
                         <div className="card-body">
                             <div className="card-title">Active</div>
-                            <p className="card-text">{cases.activeCases}</p>
+                            <p className="card-text">{mb(cases.activeCases)}</p>
                         </div>
                     </div>
                     <div className="card">
                         <div className="card-body">
                             <div className="card-title">Critical</div>
-                            <p className="card-text">{cases.criticalCases}</p>
+                            <p className="card-text">{mb(cases.criticalCases)}</p>
                         </div>
                     </div>
                     <div className="card">
                         <div className="card-body">
                             <div className="card-title">Deaths</div>
-                            <p className="card-text">{cases.deaths}</p>
+                            <p className="card-text">{mb(cases.deaths)}</p>
                         </div>
                     </div>
                 </div>

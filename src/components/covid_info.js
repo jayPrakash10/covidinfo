@@ -31,9 +31,17 @@ function sort_new(arr){
         }
 }
 
+function mb(num){
+    if(num<1000)
+        return num
+    else if(num/1000 < 1000)
+        return parseInt(num/1000)+'K+'
+    return parseInt(num/1000000)+' M+'
+}
+
 function CovidDetails({data}){
     let details =[]
-    let total_cases = 0
+    let total_cases = ''
     let total_recovered = 0
     let total_deaths = 0
     sort_new(data)
@@ -41,18 +49,18 @@ function CovidDetails({data}){
     function show(){
         data.forEach(element => {
             if(element.country=='All'){
-                total_cases=element.cases.total
-                total_recovered=element.cases.recovered
-                total_deaths=element.deaths.total
+                total_cases=mb(element.cases.total)
+                total_recovered=mb(element.cases.recovered)
+                total_deaths=mb(element.deaths.total)
             }
             else if(element.country!='North-America' && element.country!='South-America' && element.country!='Europe' && element.country!='Asia' && element.country!='Africa'){
                 const country = React.createElement('td',{},element.country)
-                const totalCases = React.createElement('td',{},element.cases.total)
-                const totalRecovered = React.createElement('td',{className:'text-success'},element.cases.recovered)
+                const totalCases = React.createElement('td',{},mb(element.cases.total))
+                const totalRecovered = React.createElement('td',{className:'text-success'},mb(element.cases.recovered))
                 const newCases = React.createElement('td',{className:'text-primary'},element.cases.new)
-                const activeCases = React.createElement('td',{},element.cases.active)
-                const criticalCases = React.createElement('td',{className:'text-warning'},element.cases.critical)
-                const deaths = React.createElement('td',{className:'text-danger'},element.deaths.total)
+                const activeCases = React.createElement('td',{},mb(element.cases.active))
+                const criticalCases = React.createElement('td',{className:'text-warning'},mb(element.cases.critical))
+                const deaths = React.createElement('td',{className:'text-danger'},mb(element.deaths.total))
     
                 const row = React.createElement('tr',{},[country,totalCases,totalRecovered,newCases,activeCases,criticalCases,deaths])
                 details.push(row)
@@ -73,13 +81,13 @@ function CovidDetails({data}){
                 <table className='table table-striped'>
                     <thead>
                         <tr>
-                        <th scope="col">Countries</th>
-                        <th scope="col">Total Cases</th>
-                        <th scope="col">Recovered</th>
-                        <th scope="col">New Cases</th>
-                        <th scope="col">Active Cases</th>
-                        <th scope="col">Critical Cases</th>
-                        <th scope="col">Deaths</th>
+                            <th scope="col">Countries</th>
+                            <th scope="col">Total Cases</th>
+                            <th scope="col">Recovered</th>
+                            <th scope="col">New Cases</th>
+                            <th scope="col">Active Cases</th>
+                            <th scope="col">Critical Cases</th>
+                            <th scope="col">Deaths</th>
                         </tr>
                     </thead>
                     <tbody>
